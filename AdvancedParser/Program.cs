@@ -1,6 +1,8 @@
-﻿using AdvancedParser.Forms.Habr;
+﻿using AdvancedParser.Forms;
+using AdvancedParser.Forms.Habr;
 using AdvancedParser.Forms.Hitmotop;
 using AdvancedParser.Forms.Main;
+using AdvancedParser.Settings;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -19,13 +21,17 @@ namespace AdvancedParser
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 
-			Font font = new Font("Arial", 12);
+			AppConfiguration config = AppConfigurationManager.LoadConfiguration();
+
+			MessageManager.ShowGuiMessages = config.ShowGuiMessages;
+
 			Dictionary<string, Form> forms = new Dictionary<string, Form>
 			{
 				["Habr"] = new FormHabrParser(),
 				["Hitmotop"] = new FormHitmotopParser(),
 			};
 
+			Font font = new Font(config.FontName, config.FontSize);
 			Application.Run(new FormMain(forms, font));
 		}
 	}

@@ -36,6 +36,7 @@
 			this.label2 = new System.Windows.Forms.Label();
 			this.NumericCount = new System.Windows.Forms.NumericUpDown();
 			this.ButtonClearResult = new System.Windows.Forms.Button();
+			this.ButtonSaveExcel = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.NumericStart)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.NumericCount)).BeginInit();
 			this.SuspendLayout();
@@ -141,11 +142,24 @@
 			this.ButtonClearResult.UseVisualStyleBackColor = true;
 			this.ButtonClearResult.Click += new System.EventHandler(this.ButtonClearResult_Click);
 			// 
+			// ButtonSaveExcel
+			// 
+			this.ButtonSaveExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.ButtonSaveExcel.Location = new System.Drawing.Point(626, 485);
+			this.ButtonSaveExcel.Margin = new System.Windows.Forms.Padding(6);
+			this.ButtonSaveExcel.Name = "ButtonSaveExcel";
+			this.ButtonSaveExcel.Size = new System.Drawing.Size(240, 44);
+			this.ButtonSaveExcel.TabIndex = 9;
+			this.ButtonSaveExcel.Text = "Save Excel";
+			this.ButtonSaveExcel.UseVisualStyleBackColor = true;
+			this.ButtonSaveExcel.Click += new System.EventHandler(this.ButtonSaveExcel_Click);
+			// 
 			// FormHitmotopParser
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(912, 882);
+			this.Controls.Add(this.ButtonSaveExcel);
 			this.Controls.Add(this.ButtonClearResult);
 			this.Controls.Add(this.NumericCount);
 			this.Controls.Add(this.label2);
@@ -175,5 +189,6 @@
 		private System.Windows.Forms.Button ButtonAbort;
 		private System.Windows.Forms.Button ButtonStart;
 		private System.Windows.Forms.ListBox ListTitles;
+		private System.Windows.Forms.Button ButtonSaveExcel;
 	}
 }

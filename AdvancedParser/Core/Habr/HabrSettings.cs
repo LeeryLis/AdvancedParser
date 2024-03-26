@@ -2,10 +2,10 @@
 {
 	internal class HabrSettings : IParserSettings
 	{
-		public HabrSettings(int start, int end)
+		public HabrSettings(int start, int count)
 		{
 			StartPoint = start;
-			CountOfPoints = end;
+			CountOfPoints = count;
 		}
 
 		public string BaseUrl { get; set; } = "https://habr.com";

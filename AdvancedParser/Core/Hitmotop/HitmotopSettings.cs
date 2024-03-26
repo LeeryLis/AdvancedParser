@@ -2,10 +2,10 @@
 {
 	internal class HitmotopSettings : IParserSettings
 	{
-		public HitmotopSettings(int start, int end)
+		public HitmotopSettings(int start, int count)
 		{
 			StartPoint = start;
-			CountOfPoints = end;
+			CountOfPoints = count;
 		}
 
 		public string BaseUrl { get; set; } = "https://rus.hitmotop.com";

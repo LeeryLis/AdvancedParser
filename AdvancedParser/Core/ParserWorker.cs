@@ -1,5 +1,4 @@
-﻿using AngleSharp;
-using AngleSharp.Html.Parser;
+﻿using AngleSharp.Html.Parser;
 using System;
 
 namespace AdvancedParser.Core
