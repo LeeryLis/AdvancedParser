@@ -7,9 +7,9 @@ namespace AdvancedParser.Forms.Main
 {
 	public partial class FormMain : Form
 	{
-		private Dictionary<string, Form> forms;
+		private Dictionary<string, Form> forms { get; }
 		
-		Font CurrentFont {  get; set; }
+		Font CurrentFont {  get; }
 
 		public FormMain(Dictionary<string, Form> forms, Font font)
 		{

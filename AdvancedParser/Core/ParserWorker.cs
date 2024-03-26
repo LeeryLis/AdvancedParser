@@ -75,8 +75,8 @@ namespace AdvancedParser.Core
 		private async void Worker()
 		{
 			var start = parserSettings.StartPoint * parserSettings.PageIncrement;
-			var end = parserSettings.EndPoint * parserSettings.PageIncrement;
-			for (int i = start; i <= end; i += parserSettings.PageIncrement)
+			var end = start + parserSettings.CountOfPoints * parserSettings.PageIncrement;
+			for (int i = start; i < end; i += parserSettings.PageIncrement)
 			{
 				if (!isActive)
 				{

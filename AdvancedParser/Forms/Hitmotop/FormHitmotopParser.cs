@@ -9,22 +9,26 @@ namespace AdvancedParser.Forms.Hitmotop
 {
 	public partial class FormHitmotopParser : Form
 	{
-		ParserWorker<Dictionary<string, string>> parser;
+		ParserWorker<Dictionary<string, string>> Parser { get; }
 
-		Font CurrentFont { get; set; }
+		Font CurrentFont { get; }
 
-		public FormHitmotopParser(Font font)
+		public FormHitmotopParser()
 		{
 			InitializeComponent();
 
-			parser = new ParserWorker<Dictionary<string, string>>(
+			Parser = new ParserWorker<Dictionary<string, string>>(
 					new HitmotopParser()
 				);
-			CurrentFont = font;
 
 			Load += FormHitmotopParser_Load;
-			parser.OnCompleted += Parser_OnCompleted;
-			parser.OnNewData += Parser_OnNewData;
+			Parser.OnCompleted += Parser_OnCompleted;
+			Parser.OnNewData += Parser_OnNewData;
+		}
+
+		public FormHitmotopParser(Font font) : this()
+		{
+			CurrentFont = font;
 		}
 
 		private void FormHitmotopParser_Load( object sender, EventArgs e)
@@ -59,19 +63,19 @@ namespace AdvancedParser.Forms.Hitmotop
 
 			if (selectedItem != null && selectedItem.Value != null)
 			{
-				System.Diagnostics.Process.Start($"{parser.Settings.BaseUrl}{selectedItem.Value}");
+				System.Diagnostics.Process.Start($"{Parser.Settings.BaseUrl}{selectedItem.Value}");
 			}
 		}
 
 		private void ButtonStart_Click(object sender, EventArgs e)
 		{
-			parser.Settings = new HitmotopSettings((int)NumericStart.Value, (int)NumericEnd.Value);
-			parser.Start();
+			Parser.Settings = new HitmotopSettings((int)NumericStart.Value, (int)NumericCount.Value);
+			Parser.Start();
 		}
 
 		private void ButtonAbort_Click(object sender, EventArgs e)
 		{
-			parser.Abort();
+			Parser.Abort();
 		}
 
 		private void ButtonClearResult_Click(object sender, EventArgs e)

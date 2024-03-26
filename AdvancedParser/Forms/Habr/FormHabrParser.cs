@@ -9,22 +9,26 @@ namespace AdvancedParser.Forms.Habr
 {
 	public partial class FormHabrParser : Form
 	{
-		ParserWorker<Dictionary<string, string>> Parser { get; set; }
+		ParserWorker<Dictionary<string, string>> Parser { get; }
 
-		Font CurrentFont { get; set; }
+		Font CurrentFont { get; }
 
-		public FormHabrParser(Font font)
+		public FormHabrParser()
 		{
 			InitializeComponent();
 
 			Parser = new ParserWorker<Dictionary<string, string>>(
 					new HabrParser()
 				);
-			CurrentFont = font;
 
 			Load += FormHabrParser_Load;
 			Parser.OnCompleted += Parser_OnCompleted;
 			Parser.OnNewData += Parser_OnNewData;
+		}
+
+		public FormHabrParser(Font font) : this()
+		{
+			CurrentFont = font;
 		}
 
 		private void FormHabrParser_Load(object sender, EventArgs e)
@@ -65,7 +69,7 @@ namespace AdvancedParser.Forms.Habr
 
 		private void ButtonStart_Click(object sender, EventArgs e)
 		{
-			Parser.Settings = new HabrSettings((int)NumericStart.Value, (int)NumericEnd.Value);
+			Parser.Settings = new HabrSettings((int)NumericStart.Value, (int)NumericCount.Value);
 			Parser.Start();
 		}
 

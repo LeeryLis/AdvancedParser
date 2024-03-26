@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{3961F683-25AC-4DC0-B8A6-BC203225536B}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>AdvancedParser</RootNamespace>
     <AssemblyName>AdvancedParser</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>

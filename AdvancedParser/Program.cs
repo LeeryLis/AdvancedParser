@@ -22,8 +22,8 @@ namespace AdvancedParser
 			Font font = new Font("Arial", 12);
 			Dictionary<string, Form> forms = new Dictionary<string, Form>
 			{
-				["Habr"] = new FormHabrParser(font),
-				["Hitmotop"] = new FormHitmotopParser(font),
+				["Habr"] = new FormHabrParser(),
+				["Hitmotop"] = new FormHitmotopParser(),
 			};
 
 			Application.Run(new FormMain(forms, font));

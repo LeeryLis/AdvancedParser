@@ -40,7 +40,7 @@
 			this.ListParsers.FormattingEnabled = true;
 			this.ListParsers.ItemHeight = 25;
 			this.ListParsers.Location = new System.Drawing.Point(24, 23);
-			this.ListParsers.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+			this.ListParsers.Margin = new System.Windows.Forms.Padding(7);
 			this.ListParsers.Name = "ListParsers";
 			this.ListParsers.Size = new System.Drawing.Size(397, 554);
 			this.ListParsers.TabIndex = 0;
@@ -53,7 +53,7 @@
 			this.ClientSize = new System.Drawing.Size(450, 619);
 			this.Controls.Add(this.ListParsers);
 			this.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+			this.Margin = new System.Windows.Forms.Padding(7);
 			this.Name = "FormMain";
 			this.Text = "Main";
 			this.Load += new System.EventHandler(this.FormMain_Load);

@@ -34,10 +34,10 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.NumericStart = new System.Windows.Forms.NumericUpDown();
 			this.label2 = new System.Windows.Forms.Label();
-			this.NumericEnd = new System.Windows.Forms.NumericUpDown();
+			this.NumericCount = new System.Windows.Forms.NumericUpDown();
 			this.ButtonClearResult = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.NumericStart)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.NumericEnd)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.NumericCount)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// ListTitles
@@ -49,7 +49,7 @@
 			this.ListTitles.FormattingEnabled = true;
 			this.ListTitles.ItemHeight = 25;
 			this.ListTitles.Location = new System.Drawing.Point(24, 23);
-			this.ListTitles.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+			this.ListTitles.Margin = new System.Windows.Forms.Padding(7);
 			this.ListTitles.Name = "ListTitles";
 			this.ListTitles.Size = new System.Drawing.Size(556, 804);
 			this.ListTitles.TabIndex = 0;
@@ -59,7 +59,7 @@
 			// 
 			this.ButtonStart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.ButtonStart.Location = new System.Drawing.Point(626, 222);
-			this.ButtonStart.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+			this.ButtonStart.Margin = new System.Windows.Forms.Padding(7);
 			this.ButtonStart.Name = "ButtonStart";
 			this.ButtonStart.Size = new System.Drawing.Size(240, 43);
 			this.ButtonStart.TabIndex = 1;
@@ -71,7 +71,7 @@
 			// 
 			this.ButtonAbort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.ButtonAbort.Location = new System.Drawing.Point(626, 277);
-			this.ButtonAbort.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+			this.ButtonAbort.Margin = new System.Windows.Forms.Padding(7);
 			this.ButtonAbort.Name = "ButtonAbort";
 			this.ButtonAbort.Size = new System.Drawing.Size(240, 43);
 			this.ButtonAbort.TabIndex = 2;
@@ -94,7 +94,7 @@
 			// 
 			this.NumericStart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.NumericStart.Location = new System.Drawing.Point(626, 53);
-			this.NumericStart.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+			this.NumericStart.Margin = new System.Windows.Forms.Padding(7);
 			this.NumericStart.Name = "NumericStart";
 			this.NumericStart.Size = new System.Drawing.Size(240, 31);
 			this.NumericStart.TabIndex = 4;
@@ -106,24 +106,34 @@
 			this.label2.Location = new System.Drawing.Point(626, 108);
 			this.label2.Margin = new System.Windows.Forms.Padding(7, 0, 7, 0);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(105, 25);
+			this.label2.Size = new System.Drawing.Size(159, 25);
 			this.label2.TabIndex = 5;
-			this.label2.Text = "End Point";
+			this.label2.Text = "Count of Points";
 			// 
-			// NumericEnd
+			// NumericCount
 			// 
-			this.NumericEnd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.NumericEnd.Location = new System.Drawing.Point(626, 140);
-			this.NumericEnd.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
-			this.NumericEnd.Name = "NumericEnd";
-			this.NumericEnd.Size = new System.Drawing.Size(240, 31);
-			this.NumericEnd.TabIndex = 6;
+			this.NumericCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.NumericCount.Location = new System.Drawing.Point(626, 140);
+			this.NumericCount.Margin = new System.Windows.Forms.Padding(7);
+			this.NumericCount.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+			this.NumericCount.Name = "NumericCount";
+			this.NumericCount.Size = new System.Drawing.Size(240, 31);
+			this.NumericCount.TabIndex = 6;
+			this.NumericCount.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
 			// 
 			// ButtonClearResult
 			// 
 			this.ButtonClearResult.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
 			this.ButtonClearResult.Location = new System.Drawing.Point(626, 373);
-			this.ButtonClearResult.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+			this.ButtonClearResult.Margin = new System.Windows.Forms.Padding(7);
 			this.ButtonClearResult.Name = "ButtonClearResult";
 			this.ButtonClearResult.Size = new System.Drawing.Size(240, 43);
 			this.ButtonClearResult.TabIndex = 7;
@@ -137,7 +147,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(912, 882);
 			this.Controls.Add(this.ButtonClearResult);
-			this.Controls.Add(this.NumericEnd);
+			this.Controls.Add(this.NumericCount);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.NumericStart);
 			this.Controls.Add(this.label1);
@@ -145,19 +155,20 @@
 			this.Controls.Add(this.ButtonStart);
 			this.Controls.Add(this.ListTitles);
 			this.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+			this.Margin = new System.Windows.Forms.Padding(7);
 			this.Name = "FormHitmotopParser";
 			this.Text = "HitmotopParser";
 			((System.ComponentModel.ISupportInitialize)(this.NumericStart)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.NumericEnd)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.NumericCount)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
+
 		}
 
 		#endregion
 
 		private System.Windows.Forms.Button ButtonClearResult;
-		private System.Windows.Forms.NumericUpDown NumericEnd;
+		private System.Windows.Forms.NumericUpDown NumericCount;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.NumericUpDown NumericStart;
 		private System.Windows.Forms.Label label1;
